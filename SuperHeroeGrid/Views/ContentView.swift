@@ -20,17 +20,17 @@ struct ContentView: View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(superheroesVM.superHeroes) { item in
+                    ForEach(superheroesVM.superHeroes) { heroe in
                         ZStack {
-                            AsyncImage(url: URL(string: item.images?.sm ?? ""))
+                            AsyncImage(url: URL(string: heroe.images?.sm ?? ""))
                             VStack {
-                                StrokeText(text: item.name ?? "", width: 0.5, color: .black)
+                                StrokeText(text: heroe.name ?? "", width: 0.5, color: .black)
                                     .foregroundColor(.white)
                                     .font(.headline)
-                                StrokeText(text: "Height: \(item.appearance?.height?.last ?? "")", width: 0.5, color: .black)
+                                StrokeText(text: "Height: \(heroe.appearance?.height?.last ?? "")", width: 0.5, color: .black)
                                     .foregroundColor(.white)
                                     .font(.headline)
-                                StrokeText(text: "Weight: \(item.appearance?.weight?.last ?? "")", width: 0.5, color: .black)
+                                StrokeText(text: "Weight: \(heroe.appearance?.weight?.last ?? "")", width: 0.5, color: .black)
                                     .foregroundColor(.white)
                                     .font(.headline)
                             }.frame(width: 150, height: 210, alignment: .bottomLeading)
@@ -38,14 +38,40 @@ struct ContentView: View {
                     }
                 }
             }.navigationBarTitle("SuperHeroe App", displayMode: .inline)
-                .navigationBarItems(trailing: Button(action: {
-                    superheroesVM.fetchHeroes()
-                }, label: {
-                    Text("Fetch Heroes")
-                }))
                 .onAppear(perform: {
                     superheroesVM.fetchHeroes()
                 })
+                .toolbar {
+                                    ToolbarItem(placement: .navigationBarTrailing) {
+                                        Menu(content: {
+                                            Button("Sort by name", action: {
+                                                superheroesVM.sortByName()
+                                            })
+                                            Button("Sort by Intelligence", action: {
+                                                superheroesVM.sortByIntelligence()
+                                            })
+                                            Button("Sort by Strength", action: {
+                                                superheroesVM.sortByStrength()
+                                            })
+                                            Button("Sort by Speed", action: {
+                                                superheroesVM.sortBySpeed()
+                                            })
+                                            Button("Sort by Durability", action: {
+                                                superheroesVM.sortByDurability()
+                                            })
+                                            Button("Sort by Power", action: {
+                                                superheroesVM.sortByPower()
+                                            })
+                                            Button("Sort by Combat", action: {
+                                                superheroesVM.sortByCombat()
+                                            })
+                                        }) {
+                                            Image(systemName: "ellipsis.circle")
+                                                .font(.system(size: 14))
+                                                .foregroundColor(.black)
+                                        }
+                                    }
+                                }
         }
     }
 }
