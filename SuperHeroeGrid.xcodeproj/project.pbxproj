@@ -14,6 +14,9 @@
 		73949CE628510C4700D03138 /* SuperHeroeGridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73949CE528510C4700D03138 /* SuperHeroeGridTests.swift */; };
 		73949CF028510C4700D03138 /* SuperHeroeGridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73949CEF28510C4700D03138 /* SuperHeroeGridUITests.swift */; };
 		73949CF228510C4700D03138 /* SuperHeroeGridUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73949CF128510C4700D03138 /* SuperHeroeGridUITestsLaunchTests.swift */; };
+		73949CFF285118D900D03138 /* SuperHeroeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73949CFE285118D900D03138 /* SuperHeroeViewModel.swift */; };
+		73949D01285121DC00D03138 /* SuperHeroe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73949D00285121DC00D03138 /* SuperHeroe.swift */; };
+		73949D07285127E900D03138 /* SuperHeroeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73949D06285127E800D03138 /* SuperHeroeRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		73949CEB28510C4700D03138 /* SuperHeroeGridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperHeroeGridUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73949CEF28510C4700D03138 /* SuperHeroeGridUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroeGridUITests.swift; sourceTree = "<group>"; };
 		73949CF128510C4700D03138 /* SuperHeroeGridUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroeGridUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		73949CFE285118D900D03138 /* SuperHeroeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroeViewModel.swift; sourceTree = "<group>"; };
+		73949D00285121DC00D03138 /* SuperHeroe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroe.swift; sourceTree = "<group>"; };
+		73949D06285127E800D03138 /* SuperHeroeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroeRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +100,11 @@
 		73949CD328510C4100D03138 /* SuperHeroeGrid */ = {
 			isa = PBXGroup;
 			children = (
+				73949D05285127C300D03138 /* Data */,
+				73949D04285126E600D03138 /* Models */,
+				73949D03285126D500D03138 /* Views */,
+				73949D02285126C400D03138 /* ViewModel */,
 				73949CD428510C4100D03138 /* SuperHeroeGridApp.swift */,
-				73949CD628510C4100D03138 /* ContentView.swift */,
 				73949CD828510C4600D03138 /* Assets.xcassets */,
 				73949CDA28510C4600D03138 /* Preview Content */,
 			);
@@ -125,6 +134,38 @@
 				73949CF128510C4700D03138 /* SuperHeroeGridUITestsLaunchTests.swift */,
 			);
 			path = SuperHeroeGridUITests;
+			sourceTree = "<group>";
+		};
+		73949D02285126C400D03138 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				73949CFE285118D900D03138 /* SuperHeroeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		73949D03285126D500D03138 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				73949CD628510C4100D03138 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		73949D04285126E600D03138 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				73949D00285121DC00D03138 /* SuperHeroe.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		73949D05285127C300D03138 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				73949D06285127E800D03138 /* SuperHeroeRepository.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +299,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				73949CD728510C4100D03138 /* ContentView.swift in Sources */,
+				73949D07285127E900D03138 /* SuperHeroeRepository.swift in Sources */,
+				73949D01285121DC00D03138 /* SuperHeroe.swift in Sources */,
+				73949CFF285118D900D03138 /* SuperHeroeViewModel.swift in Sources */,
 				73949CD528510C4100D03138 /* SuperHeroeGridApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
