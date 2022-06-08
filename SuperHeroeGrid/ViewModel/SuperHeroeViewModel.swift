@@ -8,5 +8,13 @@
 import SwiftUI
 
 class SuperHeroeViewModel: ObservableObject {
-    @Published var superHeroes = "Here goes the superheroes later"
+    @Published var superHeroes: [SuperHeroe] = []
+    var repository = SuperHeroeRepository()
+    func fetchHeroes() {
+        repository.getHeroes(success: { response in
+            self.superHeroes = response
+        }, error: {
+            
+        })
+    }
 }

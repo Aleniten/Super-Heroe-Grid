@@ -20,11 +20,32 @@ struct ContentView: View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
-                                ForEach(data, id: \.self) { item in
-                                    Text(item)
-                                }
+                    ForEach(superheroesVM.superHeroes) { item in
+                        ZStack {
+                            AsyncImage(url: URL(string: item.images?.sm ?? ""))
+                            VStack {
+                                StrokeText(text: item.name ?? "", width: 0.5, color: .black)
+                                    .foregroundColor(.white)
+                                    .font(.headline)
+                                StrokeText(text: "Height: \(item.appearance?.height?.last ?? "")", width: 0.5, color: .black)
+                                    .foregroundColor(.white)
+                                    .font(.headline)
+                                StrokeText(text: "Weight: \(item.appearance?.weight?.last ?? "")", width: 0.5, color: .black)
+                                    .foregroundColor(.white)
+                                    .font(.headline)
+                            }.frame(width: 150, height: 210, alignment: .bottomLeading)
+                        }
+                    }
                 }
             }.navigationBarTitle("SuperHeroe App", displayMode: .inline)
+                .navigationBarItems(trailing: Button(action: {
+                    superheroesVM.fetchHeroes()
+                }, label: {
+                    Text("Fetch Heroes")
+                }))
+                .onAppear(perform: {
+                    superheroesVM.fetchHeroes()
+                })
         }
     }
 }

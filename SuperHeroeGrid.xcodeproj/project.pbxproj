@@ -19,6 +19,7 @@
 		73949CFF285118D900D03138 /* SuperHeroeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73949CFE285118D900D03138 /* SuperHeroeViewModel.swift */; };
 		73949D01285121DC00D03138 /* SuperHeroe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73949D00285121DC00D03138 /* SuperHeroe.swift */; };
 		73949D07285127E900D03138 /* SuperHeroeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73949D06285127E800D03138 /* SuperHeroeRepository.swift */; };
+		73949D0A28514D3500D03138 /* StrokeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73949D0928514D3500D03138 /* StrokeText.swift */; };
 		DAB839BF71D44B3CD2491846 /* Pods_SuperHeroeGrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68EF2E410FD7C13D46B66D2 /* Pods_SuperHeroeGrid.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,8 @@
 		73949CFE285118D900D03138 /* SuperHeroeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroeViewModel.swift; sourceTree = "<group>"; };
 		73949D00285121DC00D03138 /* SuperHeroe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroe.swift; sourceTree = "<group>"; };
 		73949D06285127E800D03138 /* SuperHeroeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroeRepository.swift; sourceTree = "<group>"; };
+		73949D082851325F00D03138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		73949D0928514D3500D03138 /* StrokeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeText.swift; sourceTree = "<group>"; };
 		80E5152590892A1C77E5C47C /* Pods_SuperHeroeGrid_SuperHeroeGridUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperHeroeGrid_SuperHeroeGridUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43899114B951392AC23E8AA /* Pods-SuperHeroeGridTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHeroeGridTests.debug.xcconfig"; path = "Target Support Files/Pods-SuperHeroeGridTests/Pods-SuperHeroeGridTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6583B2A55619B1BB123B70D /* Pods-SuperHeroeGrid-SuperHeroeGridUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHeroeGrid-SuperHeroeGridUITests.release.xcconfig"; path = "Target Support Files/Pods-SuperHeroeGrid-SuperHeroeGridUITests/Pods-SuperHeroeGrid-SuperHeroeGridUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 		73949CD328510C4100D03138 /* SuperHeroeGrid */ = {
 			isa = PBXGroup;
 			children = (
+				73949D082851325F00D03138 /* Info.plist */,
 				73949D05285127C300D03138 /* Data */,
 				73949D04285126E600D03138 /* Models */,
 				73949D03285126D500D03138 /* Views */,
@@ -165,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				73949CD628510C4100D03138 /* ContentView.swift */,
+				73949D0928514D3500D03138 /* StrokeText.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,7 +210,6 @@
 				A43899114B951392AC23E8AA /* Pods-SuperHeroeGridTests.debug.xcconfig */,
 				54FA2343D23309816DB18A47 /* Pods-SuperHeroeGridTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -451,6 +455,7 @@
 				73949D07285127E900D03138 /* SuperHeroeRepository.swift in Sources */,
 				73949D01285121DC00D03138 /* SuperHeroe.swift in Sources */,
 				73949CFF285118D900D03138 /* SuperHeroeViewModel.swift in Sources */,
+				73949D0A28514D3500D03138 /* StrokeText.swift in Sources */,
 				73949CD528510C4100D03138 /* SuperHeroeGridApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,6 +621,7 @@
 				DEVELOPMENT_TEAM = 9MUNMT98RZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SuperHeroeGrid/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -646,6 +652,7 @@
 				DEVELOPMENT_TEAM = 9MUNMT98RZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SuperHeroeGrid/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
