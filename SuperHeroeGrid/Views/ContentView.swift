@@ -21,20 +21,7 @@ struct ContentView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(superheroesVM.superHeroes) { heroe in
-                        ZStack {
-                            AsyncImage(url: URL(string: heroe.images?.sm ?? ""))
-                            VStack {
-                                StrokeText(text: heroe.name ?? "", width: 0.5, color: .black)
-                                    .foregroundColor(.white)
-                                    .font(.headline)
-                                StrokeText(text: "Height: \(heroe.appearance?.height?.last ?? "")", width: 0.5, color: .black)
-                                    .foregroundColor(.white)
-                                    .font(.headline)
-                                StrokeText(text: "Weight: \(heroe.appearance?.weight?.last ?? "")", width: 0.5, color: .black)
-                                    .foregroundColor(.white)
-                                    .font(.headline)
-                            }.frame(width: 150, height: 210, alignment: .bottomLeading)
-                        }
+                        HeroeView(heroe: heroe)
                     }
                 }
             }.navigationBarTitle("SuperHeroe App", displayMode: .inline)
