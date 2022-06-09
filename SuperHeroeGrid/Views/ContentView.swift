@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var superheroesVM = SuperHeroeViewModel()
-    let data = (1...10).map { "Item \($0)" }
+    
     let columns = [
             GridItem(.flexible()),
             GridItem(.flexible())
@@ -21,7 +21,7 @@ struct ContentView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(superheroesVM.superHeroes) { heroe in
-                        HeroeView(heroe: heroe)
+                        HeroeView(heroe: heroe, superheroesVM: self.superheroesVM)
                     }
                 }
             }.navigationBarTitle("SuperHeroe App", displayMode: .inline)

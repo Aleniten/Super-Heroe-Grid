@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct HeroeView: View {
-    let heroe: SuperHeroe
-   @State var isHidden = false
+    var heroe: SuperHeroe
+    @State var isHidden = false
+    var superheroesVM: SuperHeroeViewModel?
     
     var body: some View {
         if isHidden {
@@ -23,12 +24,21 @@ struct HeroeView: View {
         ZStack {
             AsyncImage(url: URL(string: heroe.images?.sm ?? ""))
            VStack {
-               Button( action: {
-                   isHidden.toggle()
-               }) {
-                   Image(systemName: "minus.circle.fill")
-                       .font(.system(size: 14))
-                       .foregroundColor(.red)
+               HStack {
+                   Button( action: {
+                       isHidden.toggle()
+                   }) {
+                       Image(systemName: "eye.slash.fill")
+                           .font(.system(size: 14))
+                   }
+                   
+                   Button( action: {
+                       superheroesVM?.deleteHeroe(id: heroe.id ?? 0)
+                   }) {
+                       Image(systemName: "minus.circle.fill")
+                           .font(.system(size: 14))
+                           .foregroundColor(.red)
+                   }
                }.frame(width: 150, alignment: .topTrailing)
                Spacer().frame(height: 140)
                 VStack {
