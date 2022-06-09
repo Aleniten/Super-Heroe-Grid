@@ -15,6 +15,9 @@ class SuperHeroeViewModel: ObservableObject {
     var superHeroesDtO: [SuperHeroe]?
     var repository = SuperHeroeRepository()
     
+    // MARK: - Functions for fetching Heroes
+    
+    // Func for fetching heroes first see if there is in ClientSession if not call api
     func fetchHeroes(success: @escaping () -> Void, error: @escaping () -> Void) {
         guard let heroesAlreadyFetched = ClientSessionManager.shared.heroes else {
             callRepository(success: {
@@ -29,6 +32,7 @@ class SuperHeroeViewModel: ObservableObject {
         success()
     }
     
+    // Func for calling api
     func callRepository(success: @escaping () -> Void, error: @escaping () -> Void) {
         isLoading = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -44,6 +48,7 @@ class SuperHeroeViewModel: ObservableObject {
         })
     }
     
+    // MARK: - Functions for Sorting the elements
     func sortByName() {
         if let superHeroesDtO = superHeroesDtO {
             superHeroes = superHeroesDtO
@@ -93,6 +98,8 @@ class SuperHeroeViewModel: ObservableObject {
             sortedBy = .sortByCombat
         }
     }
+    
+    // MARK: - Functions for delete elements
     func deleteHeroe(id: Int) {
         if let superHeroesDtO = superHeroesDtO {
             if let indexToDelete = superHeroesDtO.firstIndex(where: { $0.id == id }) {
