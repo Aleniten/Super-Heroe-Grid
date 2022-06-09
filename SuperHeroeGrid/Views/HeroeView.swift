@@ -28,15 +28,13 @@ struct HeroeView: View {
                    Button( action: {
                        isHidden.toggle()
                    }) {
-                       Image(systemName: "eye.slash.fill")
-                           .font(.system(size: 14))
+                       StrokeImage(imageName: "eye.slash.fill", width: 0.5, color: .white, fontSize: 14)
                    }
                    
                    Button( action: {
                        superheroesVM?.deleteHeroe(id: heroe.id ?? 0)
                    }) {
-                       Image(systemName: "minus.circle.fill")
-                           .font(.system(size: 14))
+                       StrokeImage(imageName: "minus.circle.fill", width: 0.5, color: .white, fontSize: 14)
                            .foregroundColor(.red)
                    }
                }.frame(width: 150, alignment: .topTrailing)
