@@ -9,16 +9,38 @@ import Foundation
 
 class SuperHeroeViewModel: ObservableObject {
     @Published var superHeroes: [SuperHeroe] = []
+    @Published var isLoading = false
+    
     var sortedBy: SortedType?
     var superHeroesDtO: [SuperHeroe]?
     var repository = SuperHeroeRepository()
     
-    func fetchHeroes() {
-        repository.getHeroes(success: { response in
-            self.superHeroesDtO = response
-            self.superHeroes = response
-        }, error: {
-            
+    func fetchHeroes(success: @escaping () -> Void, error: @escaping () -> Void) {
+        guard let heroesAlreadyFetched = ClientSessionManager.shared.heroes else {
+            callRepository(success: {
+                success()
+            }, error: {
+                error()
+            })
+            return
+        }
+        self.superHeroesDtO = heroesAlreadyFetched
+        self.superHeroes = heroesAlreadyFetched
+        success()
+    }
+    
+    func callRepository(success: @escaping () -> Void, error: @escaping () -> Void) {
+        isLoading = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            self.repository.getHeroes(success: { response in
+                self.superHeroesDtO = response
+                self.superHeroes = response
+                self.isLoading = false
+                success()
+            }, error: {
+                self.isLoading = false
+                error()
+            })
         })
     }
     

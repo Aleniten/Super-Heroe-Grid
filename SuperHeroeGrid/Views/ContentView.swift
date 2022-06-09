@@ -18,6 +18,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
+            ZStack {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(superheroesVM.superHeroes) { heroe in
@@ -28,7 +29,7 @@ struct ContentView: View {
                 }
             }.navigationBarTitle("SuperHeroe App", displayMode: .inline)
                 .onAppear(perform: {
-                    superheroesVM.fetchHeroes()
+                    startApiCallForHeroes()
                 })
                 .toolbar {
                                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -61,8 +62,22 @@ struct ContentView: View {
                                         }
                                     }
                                 }
+                
+                if superheroesVM.isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                        .scaleEffect(3)
+                }
+            }
         }.accentColor(.white)
     }
+    
+    func startApiCallForHeroes() {
+            superheroesVM.fetchHeroes(success: {
+            }, error: {
+
+            })
+        }
 }
 
 struct ContentView_Previews: PreviewProvider {
