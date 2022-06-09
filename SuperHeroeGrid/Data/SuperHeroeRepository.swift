@@ -22,7 +22,7 @@ struct SuperHeroeRepository: SuperHeroeRepositoryProtocol {
                 }
                 print("Success Call = \(superHeroesDto)")
                 ClientSessionManager.shared.heroes = superHeroesDto
-                success(fourItems)
+                success(superHeroesDto)
             }
     }
 }

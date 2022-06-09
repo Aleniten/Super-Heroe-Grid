@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var superheroesVM = SuperHeroeViewModel()
+    @State private var alertIsPresented = false
     
     let columns = [
             GridItem(.flexible()),
@@ -68,14 +69,18 @@ struct ContentView: View {
                         .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                         .scaleEffect(3)
                 }
-            }
+            }.alert(isPresented: $alertIsPresented, content: {
+                Alert(title: Text("Something go wrong"), message: Text("Sorry for the inconvenient"), primaryButton: .default(Text("Try again"), action: {
+                    startApiCallForHeroes()
+                }), secondaryButton: .cancel())
+            })
         }.accentColor(.white)
     }
     
     func startApiCallForHeroes() {
             superheroesVM.fetchHeroes(success: {
             }, error: {
-
+                alertIsPresented = true
             })
         }
 }
