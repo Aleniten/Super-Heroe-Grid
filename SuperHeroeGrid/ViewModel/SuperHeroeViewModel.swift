@@ -77,6 +77,7 @@ class SuperHeroeViewModel: ObservableObject {
                 var temporaryArray = superHeroesDtO
                 temporaryArray.remove(at: indexToDelete)
                 self.superHeroesDtO = temporaryArray
+                ClientSessionManager.shared.heroes = temporaryArray
                 switch sortedBy {
                     case .sortByName:
                         self.sortByName()

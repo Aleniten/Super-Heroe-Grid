@@ -23,6 +23,7 @@
 		73949D0C2851637600D03138 /* HeroeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73949D0B2851637600D03138 /* HeroeView.swift */; };
 		73949D0E2851862000D03138 /* StrokeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73949D0D2851862000D03138 /* StrokeImage.swift */; };
 		73949D1028518B4100D03138 /* HeroeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73949D0F28518B4100D03138 /* HeroeDetails.swift */; };
+		73949D122851933C00D03138 /* ClientSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73949D112851933C00D03138 /* ClientSessionManager.swift */; };
 		DAB839BF71D44B3CD2491846 /* Pods_SuperHeroeGrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68EF2E410FD7C13D46B66D2 /* Pods_SuperHeroeGrid.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		73949D0B2851637600D03138 /* HeroeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeView.swift; sourceTree = "<group>"; };
 		73949D0D2851862000D03138 /* StrokeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeImage.swift; sourceTree = "<group>"; };
 		73949D0F28518B4100D03138 /* HeroeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeDetails.swift; sourceTree = "<group>"; };
+		73949D112851933C00D03138 /* ClientSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientSessionManager.swift; sourceTree = "<group>"; };
 		80E5152590892A1C77E5C47C /* Pods_SuperHeroeGrid_SuperHeroeGridUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperHeroeGrid_SuperHeroeGridUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43899114B951392AC23E8AA /* Pods-SuperHeroeGridTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHeroeGridTests.debug.xcconfig"; path = "Target Support Files/Pods-SuperHeroeGridTests/Pods-SuperHeroeGridTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6583B2A55619B1BB123B70D /* Pods-SuperHeroeGrid-SuperHeroeGridUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHeroeGrid-SuperHeroeGridUITests.release.xcconfig"; path = "Target Support Files/Pods-SuperHeroeGrid-SuperHeroeGridUITests/Pods-SuperHeroeGrid-SuperHeroeGridUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				73949CD428510C4100D03138 /* SuperHeroeGridApp.swift */,
 				73949CD828510C4600D03138 /* Assets.xcassets */,
 				73949CDA28510C4600D03138 /* Preview Content */,
+				73949D112851933C00D03138 /* ClientSessionManager.swift */,
 			);
 			path = SuperHeroeGrid;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73949CD728510C4100D03138 /* ContentView.swift in Sources */,
+				73949D122851933C00D03138 /* ClientSessionManager.swift in Sources */,
 				73949D07285127E900D03138 /* SuperHeroeRepository.swift in Sources */,
 				73949D01285121DC00D03138 /* SuperHeroe.swift in Sources */,
 				73949CFF285118D900D03138 /* SuperHeroeViewModel.swift in Sources */,
