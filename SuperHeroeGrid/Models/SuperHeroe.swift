@@ -18,7 +18,7 @@ class SuperHeroe: Identifiable, Mappable {
     var biography: Biography?
     var images: HeroesImages?
     
-    
+    init(){}
     required init?(map: Map) {}
     
     func mapping(map: Map) {

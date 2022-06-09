@@ -99,6 +99,7 @@ class SuperHeroeViewModel: ObservableObject {
             }
         }
     }
+    
 }
 
 enum SortedType {

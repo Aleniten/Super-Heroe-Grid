@@ -38,9 +38,9 @@ struct SuperHeroeRepository: SuperHeroeRepositoryProtocol {
                 return
             }
             print("Success Call = \(superHeroesDto)")
-            let fourItems = Array(superHeroesDto.prefix(4))
-            ClientSessionManager.shared.heroes = fourItems
-            success(fourItems)
+//            let fourItems = Array(superHeroesDto.prefix(4))
+            ClientSessionManager.shared.heroes = superHeroesDto
+            success(superHeroesDto)
         }
     }
 }

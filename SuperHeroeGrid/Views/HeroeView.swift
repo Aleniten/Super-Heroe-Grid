@@ -19,6 +19,7 @@ struct HeroeView: View {
                 }) {
                     Text("Image Hidden")
                         .font(.system(size: 14))
+                        .foregroundColor(Color.blue)
                 }.frame(height: 200,alignment: .center)
         } else {
         ZStack {
@@ -28,7 +29,7 @@ struct HeroeView: View {
                    Button( action: {
                        isHidden.toggle()
                    }) {
-                       StrokeImage(imageName: "eye.slash.fill", width: 0.5, color: .white, fontSize: 14)
+                       StrokeImage(imageName: "eye.slash.fill", width: 0.5, color: .white, fontSize: 14).foregroundColor(Color.blue)
                    }
                    
                    Button( action: {
