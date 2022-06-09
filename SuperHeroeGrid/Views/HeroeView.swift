@@ -19,7 +19,7 @@ struct HeroeView: View {
                 }) {
                     Text("Image Hidden")
                         .font(.system(size: 14))
-            }
+                }.frame(height: 200,alignment: .center)
         } else {
         ZStack {
             AsyncImage(url: URL(string: heroe.images?.sm ?? ""))
@@ -50,7 +50,7 @@ struct HeroeView: View {
                     .foregroundColor(.white)
                     .font(.headline)
                 }
-           }.frame(width: 150, alignment: .leading)
+           }.frame(width: 180, alignment: .leading)
             }
         }
     }

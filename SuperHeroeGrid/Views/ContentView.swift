@@ -21,7 +21,9 @@ struct ContentView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(superheroesVM.superHeroes) { heroe in
-                        HeroeView(heroe: heroe, superheroesVM: self.superheroesVM)
+                            NavigationLink(destination: HeroeDetails(heroe: heroe)) {
+                                HeroeView(heroe: heroe, superheroesVM: self.superheroesVM)
+                            }
                     }
                 }
             }.navigationBarTitle("SuperHeroe App", displayMode: .inline)
